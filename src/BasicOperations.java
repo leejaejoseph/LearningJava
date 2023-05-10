@@ -84,7 +84,7 @@ public class BasicOperations {
 		return HYPOTENUSE;
 	}
 	
-	static void classMaking(String[] args) {
+	static void classMaking() {
 		Scanner scanner = new Scanner(System.in);
 		OOP myOOP = new OOP();
 		System.out.println(myOOP.welcome+" ");
@@ -101,7 +101,7 @@ public class BasicOperations {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void Constructors() {
 		ClassRoom student1 = new ClassRoom("Joseph", "Java", 212423);
 		ClassRoom student2 = new ClassRoom("Jo", "JavaScript", 123456);
 		ClassRoom[] students = {student1, student2};
@@ -119,5 +119,13 @@ public class BasicOperations {
 		System.out.println(studentID);
 	}
 	
+	static void diceRoll() {
+		Dice dice = new Dice();
+		int number = dice.roll();
+		System.out.println(number);
+	}
 	
+	public static void main() {
+		
+	}
 }
