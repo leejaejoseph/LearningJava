@@ -84,7 +84,7 @@ public class BasicOperations {
 		return HYPOTENUSE;
 	}
 	
-	public static void main(String[] args) {
+	static void classMaking(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		OOP myOOP = new OOP();
 		System.out.println(myOOP.welcome+" ");
@@ -100,4 +100,24 @@ public class BasicOperations {
 			System.out.println(myOOP.enter());
 		}
 	}
+	
+	public static void main(String[] args) {
+		ClassRoom student1 = new ClassRoom("Joseph", "Java", 212423);
+		ClassRoom student2 = new ClassRoom("Jo", "JavaScript", 123456);
+		ClassRoom[] students = {student1, student2};
+
+		ArrayList<String> studentList = new ArrayList<String>();
+		ArrayList<String> studentCourse = new ArrayList<String>();
+		ArrayList<Number> studentID = new ArrayList<Number>();
+		for (ClassRoom student: students) {
+			studentList.add(student.name);
+			studentCourse.add(student.course);
+			studentID.add(student.id);
+		}
+		System.out.println(studentList);
+		System.out.println(studentCourse);
+		System.out.println(studentID);
+	}
+	
+	
 }
