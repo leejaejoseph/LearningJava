@@ -144,7 +144,7 @@ public class BasicOperations {
 		}
 	}
 	
-	public static void main(String[] args) {
+	static void burning(String[] args) {
 		Torch torch = new Torch();
 		Wood wood1 = new Wood(3);
 		Wood wood2 = new Wood(3);
@@ -153,4 +153,58 @@ public class BasicOperations {
 		String furnace = torch.Burn();
 		System.out.println(furnace);
 	}
+	
+	 static void heroes(String[] args) {
+		plastic Recycle = new plastic("Plastic", false);
+		System.out.println(Recycle.recycle());
+		
+		Hero hero1 = new Hero("Iron Man", "Propulsion", 2012, "Smarts");
+		Hero hero2 = new Hero("Hulk", "Legs", 2008, "Radiation");
+		Hero hero3 = new Hero("SpiderMan", "Webs", 2019, "Spidey Tingle");
+		
+		
+		System.out.println(hero1.toString());
+		System.out.println(hero2.toString());
+		
+		//Copying hero1 contents to hero 2
+		// dont do Hero2 = hero1 as hero1 will now just have two access points from the same memory and instead use
+		hero2.copy(hero1); // Have to make a method for copy.
+		System.out.println(hero1.toString());
+		System.out.println(hero2.toString());
+		// for during instantiation instead of after we do 
+		Hero hero4 = new Hero(hero1);
+		System.out.println(hero4.toString());
+	}
+	 public static void main(String[] args) {
+		 Fire Charizard = new Fire();
+		 System.out.println(Charizard.UnPhase());
+		 
+		 Electric Pikachu = new Electric();
+		 System.out.println(Pikachu.Pain());
+
+		 Grass Bulbasaur = new Grass();
+		 System.out.println(Bulbasaur.Pain());
+		 
+		 Pokemon[] Pokemons = {Charizard, Pikachu, Bulbasaur};
+		 
+		 for (Pokemon Pokemon: Pokemons) {
+			 System.out.println(Pokemon.Weak());
+		 }
+		 Scanner typeSelection = new Scanner(System.in);
+		 Pokemon Leafeon = null;
+		 
+		 System.out.println("Which type is Leafeon?");
+		 System.out.println("1. Grass, 2. Electric, 3.Fire");
+		 int type = typeSelection.nextInt();
+		 
+		 if (type == 1) {
+			 Leafeon = new Grass();
+		 } else if (type == 2) {
+			 Leafeon = new Electric();
+		 } else if (type == 3) {
+			 Leafeon = new Fire();
+		 }
+		 System.out.println(Leafeon.Strong());
+		 System.out.println(Leafeon.Weak());
+	 }
 }
