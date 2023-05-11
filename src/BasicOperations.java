@@ -125,7 +125,22 @@ public class BasicOperations {
 		System.out.println(number);
 	}
 	
-	public static void main() {
+	static void teachers(String[] args) {
+		Teachers teachers = new Teachers("George", "C++", 32, 6);
 		
+		System.out.println(teachers);
+	}
+	
+	public static void main(String[] args) {
+//		Arrays[] array = new Arrays[4]; 
+		Stores store1 = new Stores("Walmart");
+		Stores store2 = new Stores("Target");
+		Stores store3 = new Stores("Hmart");
+		
+		Stores[] Stores = {store1, store2, store3};
+		
+		for (Stores item : Stores) {
+			System.out.println(item.item);
+		}
 	}
 }
