@@ -131,7 +131,7 @@ public class BasicOperations {
 		System.out.println(teachers);
 	}
 	
-	public static void main(String[] args) {
+	static void Stores(String[] args) {
 //		Arrays[] array = new Arrays[4]; 
 		Stores store1 = new Stores("Walmart");
 		Stores store2 = new Stores("Target");
@@ -142,5 +142,15 @@ public class BasicOperations {
 		for (Stores item : Stores) {
 			System.out.println(item.item);
 		}
+	}
+	
+	public static void main(String[] args) {
+		Torch torch = new Torch();
+		Wood wood1 = new Wood(3);
+		Wood wood2 = new Wood(3);
+		Wood wood3 = new Wood(3);
+
+		String furnace = torch.Burn();
+		System.out.println(furnace);
 	}
 }
