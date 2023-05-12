@@ -1,9 +1,11 @@
 import javax.swing.JOptionPane;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.lang.Math;
+import java.io.File;
 
 public class BasicOperations {
 
@@ -175,7 +177,7 @@ public class BasicOperations {
 		Hero hero4 = new Hero(hero1);
 		System.out.println(hero4.toString());
 	}
-	 public static void main(String[] args) {
+	 static void Pokemon(String[] args) {
 		 Fire Charizard = new Fire();
 		 System.out.println(Charizard.UnPhase());
 		 
@@ -206,5 +208,76 @@ public class BasicOperations {
 		 }
 		 System.out.println(Leafeon.Strong());
 		 System.out.println(Leafeon.Weak());
+	 }
+	 public static void Division(String[] args) {
+		 Scanner scanner = new Scanner(System.in);
+		 try {			 
+			 System.out.println("Numerator");
+			 int Numerator = scanner.nextInt();
+			 System.out.println("Denominator");
+			 int Denominator = scanner.nextInt();
+			 int Total = Numerator / Denominator;
+			 System.out.println(Total);
+		 } catch(ArithmeticException e){
+			 System.out.println("Division by 0 is invalid");
+		 } catch(InputMismatchException e){
+			 System.out.println("Gotta be numbers");
+		 } catch(Exception e){
+			 System.out.println("Invalid");
+		 } finally {
+			 // best practice to close open files
+			 System.out.println("Completed operation");
+			 scanner.close();
+		 }
+	 }
+	 static void files(String[] args) {
+		 File file = new File("file.txt");// can also do C:/Users/Joseph/Desktop/file.txt
+		 
+		 if (file.exists()) {
+			 System.out.println("It exists");
+			 file.getPath(); //Constructor
+			 file.getAbsolutePath(); //absolute path
+			 file.isFile();// checks if file or directory
+			 file.delete();// gets deleted;
+		 }else if (!file.exists()) {
+			 System.out.println("Does not exists");
+		 }
+	 }
+	 
+	 public static void main(String[] args) {
+		 Integer[] IntArray = {1, 2, 3};
+		 Double[] DoubleArray = {3.1, 1.4, 1.5};
+		 Character[] CharArray = {'s', '@', '2'};
+		 String[] StringArray = {"Hello", "Mother", "Father"};
+		 
+		 System.out.println(returnArray(StringArray));
+		 System.out.println(returnArray(CharArray));
+		 System.out.println(returnArray(DoubleArray));
+		 System.out.println(returnArray(IntArray));
+		 
+		 
+		 MyGenericClass<Integer> IntArray1 = new MyGenericClass<Integer>(1);
+		 MyGenericClass<Double> DoubleArray1 = new MyGenericClass<Double>(3.1);
+		 MyGenericClass<Character> CharArray1 = new MyGenericClass<Character>('s');
+		 MyGenericClass<String> StringArray1 = new MyGenericClass<String>("Mother");
+		 
+		 System.out.println(IntArray1.getValue());
+		 System.out.println(DoubleArray1.getValue());
+		 System.out.println(CharArray1.getValue());
+		 System.out.println(StringArray1.getValue());
+	 }
+	 static <T> void DisplayItems(T[] array) {		 
+		 for(T i : array) {
+			 System.out.println(i);
+		 }
+	 }
+	 static <T> ArrayList<T> returnArray(T[] array) {		 
+		 ArrayList<T> Array = new ArrayList<T>();
+		 for(T i : array) {
+			 Array.add(i);
+		 }
+		 
+		 return Array;
+		 
 	 }
 }
